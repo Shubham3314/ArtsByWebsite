@@ -7,6 +7,7 @@ import { ref, uploadBytesResumable, getDownloadURL} from "firebase/storage";
 
 import { onAuthStateChanged } from 'firebase/auth';
 import { set,ref as dbref } from 'firebase/database';
+import { Link } from 'react-router-dom';
 
 function AddNewArt() {
 
@@ -39,6 +40,8 @@ function AddNewArt() {
       // FOR BUG IN CHROME
       event.target.value = "";
     }
+
+   
 
     // function onSelectFile2(event) {
     //   setFile2(event.target.files[0]);
@@ -96,7 +99,7 @@ function AddNewArt() {
                        // console.log(index)
                       onAuthStateChanged(auth, (user) => {
                         if (user) {
-                        
+                          
                           const date = new Date();
 
                           let currentDay= String(date.getDate()).padStart(2, '0');
@@ -115,7 +118,7 @@ function AddNewArt() {
                           // uploadImage(file2,ImageName +"2","2")
                           // uploadImage(file3,ImageName +"3","3")
                           
-                            set(dbref(db, 'Artists/WAxoO1VmsBcRnudQkDrEzTSBP482/Arts/' + ImageName + currentDate + time), {
+                            set(dbref(db, 'Artists/'+user.uid+'/Arts/' + ImageName + currentDate + time), {
                               ImageName: ImageName,
                               ImageDescription: ImageDescription,
                               ImagePrice: ImagePrice,
@@ -149,7 +152,10 @@ function AddNewArt() {
   return (
    <>
     <div className='AddArtNavbar'>
-      <button>Cancel</button>
+      <Link to={'/ArtistDashboard'}>
+      <button type='submit' >Cancel</button>
+      </Link>
+      
       <h1>Upload Your Art</h1>
     </div>
     <div className='UploadArtForm'>
