@@ -1,0 +1,29 @@
+.out-box{
+    margin-top:150px;
+}
+
+.artist-main-container{
+    justify-content:center;
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+}
+
+.heading{
+    justify-content:center;
+    margin-top:10px;
+}
+
+.show-artist{
+    height:280px;
+    width: 300px;
+    margin-top:10px;
+    margin-right:60px;
+    margin-bottom:50px;
+    border:1px solid ;
+}
+
+.show-artist .image img{
+    height:200px;
+    width:200px;
+    margin-top:15px;
+}

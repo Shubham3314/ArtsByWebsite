@@ -1,0 +1,49 @@
+.MainFormPart {
+    flex: 1 1 0%;
+    border:1px solid gray;
+    height: auto;
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-top: 200px;
+    border-width: 5px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+
+}
+
+.phoneNum{
+    margin-left: 10px;
+
+}
+.submitBtn{
+    background-color: aqua;
+    border-radius: 5px;
+    margin-top: 40px;
+    width: 90px;
+    height: 30px;
+}
+
+.innerForm{
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+
+}
+.innerForm label{
+
+    font-size: 20px;
+    justify-self: left;
+    margin-top: 10px;
+}
+
+.innerForm input {
+
+    padding: 5px;
+    padding-left: 5px;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: fit-content;
+}

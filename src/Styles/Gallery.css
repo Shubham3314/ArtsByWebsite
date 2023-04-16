@@ -1,0 +1,21 @@
+.gallery{
+    background-image: url(/src/assets/background.jpg);
+
+}
+
+.imggallery{
+   
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: center; 
+    margin: 0px auto 0px auto;; 
+   
+}
+
+.imggallery img{
+    width: 350px;
+    height : 350px;
+    cursor: pointer;
+    margin: 20px 40px 40px 20px;
+}
+

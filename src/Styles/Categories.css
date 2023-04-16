@@ -1,0 +1,30 @@
+.main-container{
+    margin-top: 120px;
+    display:grid;
+    justify-content:center;
+    grid-template-columns: repeat(4,auto);
+}
+
+.inner-box{
+    position:relative;
+    margin-right:50px;
+    margin-top:50px;
+    justify-content:center;
+    height:350px;
+    width:350px;    
+}
+
+.category-image img{
+    height:300px;
+    width:300px;
+}
+
+button{
+    margin-top: 20px;
+    border: rgba(7, 7, 7, 0.425) solid;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #000000;
+}
