@@ -1,0 +1,54 @@
+.navbar{
+    height: 80px;
+    background-color: gray;
+ 
+}
+
+
+.welcomeArtistHeading h1{
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-style: bold;
+    
+}
+
+.AddNewArt{
+    justify-content: right;
+    margin-top: -20px;
+    padding-left: 10px;
+    border: 2 gray solid;
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+   
+}
+.AddNewArt button{
+    height: 30px;
+    width: 120px;
+    border-radius: 5px;
+    margin-left: 20px;
+    background-color: aqua;
+}
+
+.AddNewArt .button2{
+    margin-right: 20px;
+}
+
+.MainPage{
+    width: 90%;
+    margin-left: 70px;
+    justify-content: center;
+    background-color: aqua;
+}
+
+.MainPage h2{
+    font-size: 40px;
+}
+
+.ShowArtByArtist{
+    width: 90%;
+    margin-left: 70px;
+    background: yellowgreen;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+}
