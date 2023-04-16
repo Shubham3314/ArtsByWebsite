@@ -1,5 +1,5 @@
 import React from 'react'
-//import "../Styles/AddNewArt.css"
+import "../Styles/AddNewArt.css"
 
 import { useState } from 'react';
 import { storage } from '../firebase';
@@ -7,56 +7,52 @@ import {getStorage, ref, uploadBytesResumable, getDownloadURL} from "firebase/st
 
 function AddNewArt() {
 
+  const [file,setFile] = useState("")
   const [selectedImages1, setSelectedImages1] = useState([]);
   const [selectedImages2, setSelectedImages2] = useState([]);
   const [selectedImages3, setSelectedImages3] = useState([]);
 
-  const onSelectFile1 = (event) => {
-  
-    const selectedFiles = event.target.files;
-    const selectedFilesArray = Array.from(selectedFiles);
+  function onSelectFile1(event) {
+      setFile(event.target.files[0]);
+      console.log(file);
+    }
 
-    const imagesArray = selectedFilesArray.map((file) => {
-      return URL.createObjectURL(file);
-    });
-    
-    setSelectedImages1(imagesArray);
-
-    // FOR BUG IN CHROME
-    event.target.value = "";
-  };
-  const onSelectFile2 = (event) => {
-  
-    const selectedFiles = event.target.files;
-    const selectedFilesArray = Array.from(selectedFiles);
-
-    const imagesArray = selectedFilesArray.map((file) => {
-      return URL.createObjectURL(file);
-    });
-    
-    setSelectedImages2(imagesArray);
-
-    // FOR BUG IN CHROME
-    event.target.value = "";
-  };
-  const onSelectFile3 = (event) => {
-  
-    const selectedFiles = event.target.files;
-    const selectedFilesArray = Array.from(selectedFiles);
-
-    const imagesArray = selectedFilesArray.map((file) => {
-      return URL.createObjectURL(file);
-    });
-    
-    setSelectedImages3(imagesArray);
-
-    // FOR BUG IN CHROME
-    event.target.value = "";
-  };
+    function onSelectFile2(event) {
+      setFile(event.target.files[0]);
+      console.log(file);
+    }
+    function onSelectFile3(event) {
+      setFile(event.target.files[0]);
+      console.log(file);
+    }
 
   const handlesubmit = (event) => {
     console.log("Aedawdw")
-  };
+    if (!file) {
+      alert("Please choose a file first!")
+    }
+
+    const storageRef = ref(storage, `/files/${file.name}`)
+    const uploadTask = uploadBytesResumable(storageRef, file);
+    uploadTask.on(
+              "state_changed",
+              (snapshot) => {
+                  const percent = Math.round(
+                      (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+                  );
+       
+                  // update progress
+                  console.log(percent)
+              },
+              (err) => console.log(err),
+              () => {
+                  // download url
+                  getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+                      console.log(url);
+                  });
+              }
+          );
+  };  
 
 
   return (

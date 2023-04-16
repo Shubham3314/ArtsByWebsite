@@ -1,0 +1,84 @@
+.AddArtNavbar{
+    background-color: aqua;
+    height: 60px;
+}
+.AddArtNavbar button{
+    margin-right: 1200px;
+    margin-top: 5px;
+    background-color: blueviolet;
+}
+
+.AddArtNavbar h1{
+    margin-top: -40px;
+    font-size: 30px;
+}
+
+.SelectImages{
+    width: 90%;
+    margin-left: 70px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 3px gray solid;
+}
+
+.SelectImages h2{
+    font-size: 30px;
+    font-style: bold;
+    border-bottom: 2px solid ;
+}
+
+.ImagePlaceholder{
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    margin-top: 20px;
+    margin-left: 50px;
+    padding-left: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.ImagePlaceholder img{
+    position: relative;
+    height: 250px;
+    width: 250px;
+    
+}
+
+.ImagePlaceholder input{
+    margin-top: 10px;
+    
+}
+
+.image img{
+    width: 500px;
+}
+
+.form{
+    margin-top: 10px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2,auto);
+}
+
+.form input{
+    border: 2px solid ;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    
+}
+
+.form textarea {
+    border: 2px solid ;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+.form label{
+    justify-self: left;
+    margin-left: 20px;
+    margin-top: 10px;
+}

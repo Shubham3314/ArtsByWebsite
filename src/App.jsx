@@ -8,6 +8,7 @@ import Categories from './routes/Categories';
 import Navbar from "./components/Navbar";
 import Login from './components/LogIn';
 import Register from './components/Register';
+import AddNewArt from './pages/AddNewArt';
 
 function App() {
   
@@ -19,19 +20,19 @@ function App() {
   return (
     <div className="App">
      
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
       {/* {
                 currentForm === "login" ? <Login onFormSwitch={toggleForm} /> : <Register onFormSwitch={toggleForm} />
       } */}
-      <Routes>
+      {/* <Routes>
         <Route path='/Home' element={<Home/>}/>
         <Route path='/Become Seller' element={<BecomeSeller/>}/>
         <Route path='/Request a sketch' element={<RequestSketch/>}/>
         <Route path='/Categories' element={<Categories/>}/>
-        {/* <Route path='/Login' element={<Login/>}/>  */}
+        <Route path='/Login' element={<Login/>}/> 
         <Route path='/Register' element={<Register/>}/>
-      </Routes>
-
+      </Routes> */}
+      <AddNewArt></AddNewArt>
     </div>
   );
 }
