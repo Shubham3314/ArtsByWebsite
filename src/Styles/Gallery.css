@@ -1,6 +1,10 @@
 .gallery{
     background-image: url(/src/assets/background.jpg);
-
+}
+.gallery h1{
+    color: rgba(255, 255, 255, 0.788);
+    font-size: 50px;
+    font-family: Rubik;
 }
 
 .imggallery{
@@ -17,5 +21,9 @@
     height : 350px;
     cursor: pointer;
     margin: 20px 40px 40px 20px;
+    transition: 0.5s all ease-in-out;
+}
+.imggallery img:hover{
+    transform: scale(1.3);
 }
 

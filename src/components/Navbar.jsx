@@ -14,7 +14,6 @@ const Navbar = () =>{
   }
   
   
-
   let navigate = useNavigate(); 
   const print = (index) =>{
     console.log(index)

@@ -15,7 +15,7 @@ function Categories (){
         <div className="inner-box">
             <div className="category-image">
                 <img src={mandala} alt="" />
-                <button type="submit">Mandala Art</button>
+                <button type="submit" >Mandala Art</button>
             </div>
         </div>
         <div className="inner-box">

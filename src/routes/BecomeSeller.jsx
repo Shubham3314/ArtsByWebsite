@@ -7,10 +7,12 @@ import { db } from "../firebase";
 import { set,ref } from "firebase/database";
 import { auth } from "../firebase";
 import { signInWithEmailAndPassword ,createUserWithEmailAndPassword,onAuthStateChanged} from "firebase/auth";
-import ArtistDashboard from "../pages/ArtistDashboard";
-import { Navigate, Routes, Route } from "react-router-dom";
+import Register from "../components/Register";
+import {Link, useNavigate, Routes, Route } from "react-router-dom";
+
 
 function BecomeSeller (){
+  let navigate = useNavigate(); 
   const [PhoneNumber, setPhoneNumber] = useState()
   const [nameOfArtist, setName] = useState('');
   const [pass, setPass] = useState('');
@@ -20,6 +22,11 @@ function BecomeSeller (){
   const [pinCode, setPinCode] = useState('');
   const [DOB, setdob] = useState('');
 
+  function nav(){
+    console.log("navigate")
+    navigate('/ArtistDashboard')
+
+  }
   
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -38,7 +45,7 @@ function BecomeSeller (){
         });  
         console.log("User Logged In")
         IsSigned = true;
-        Navigate('/ArtistDashboard');
+        nav()
   
     })
     .catch((error) => {
@@ -59,7 +66,7 @@ function BecomeSeller (){
               DOB:DOB,
     
             });  
-            Navigate('/ArtistDashboard');
+            nav()
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -68,6 +75,8 @@ function BecomeSeller (){
         });
     }
   }
+
+ 
 
   return(
     <>
@@ -107,11 +116,11 @@ function BecomeSeller (){
         />
 
       </div>
-      <button type="submit">Submit</button>
+       <button type="submit" onClick={handleSubmit}>Submit</button>
       </form>
       <Routes>
-      <Route path='/ArtistDashboard' element={<ArtistDashboard/>}></Route>
-    </Routes>
+        <Route path='/register' element={<Register/>}></Route>
+      </Routes>
     </div>
    
     </>
